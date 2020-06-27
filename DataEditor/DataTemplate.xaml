@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfApp3">
+    <DataTemplate x:Key="studentDataTemplate" DataType="{x:Type local:Student}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Name:" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Text="{Binding Path=Name}" VerticalAlignment="Center" IsReadOnly="False"/>
+            
+            <TextBlock Grid.Row="1" Text="Admission Date:" VerticalAlignment="Center"/>
+            <DatePicker Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" SelectedDate="{Binding Path=Admission, Mode=TwoWay}"/>
+
+            <TextBlock Grid.Row="2" Text="Course:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Group.Course}" VerticalAlignment="Center" IsReadOnly="False"/>
+
+            <TextBlock Grid.Row="3" Text="Group:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Group.Number}" VerticalAlignment="Center" IsReadOnly="False"/>
+
+            <TextBlock Grid.Row="4" Text="Track:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Group.Track}" VerticalAlignment="Center" IsReadOnly="False"/>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>
